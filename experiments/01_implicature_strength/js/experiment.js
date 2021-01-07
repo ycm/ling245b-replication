@@ -74,7 +74,7 @@ function make_slides(f) {
     log_responses: function() {
       exp.data_trials.push({
         "slide_number_in_experiment": exp.phase,
-        "id": "example1",
+        "id": "example2",
         "response": this.radio,
         "strangeSentence": "",
         "sentence": "",
@@ -96,10 +96,18 @@ function make_slides(f) {
     name: "trial",
 
     start: function() {
+      var stim = {
+        "TGrep": "37224:9",
+        "Context": "Speaker A:  and, and i, you know, i still provide most of the things that  go on around the house.<p>Speaker B: right.<p>Speaker A: so, uh, yeah and for a while i was going to school too, and tha-, it was tough.<p>Speaker B: yeah,  i uh, i think that while it 's a good change for i think women to be able  to fulfill their potential in whatever they feel, you know, their expertise may be .<p>Speaker A: uh-huh.<p>Speaker B: uh-huh.<p>Speaker A: uh, i think sometimes other things suffer and tha-, i think it 's hard to find a balance there.<p>Speaker B: ",
+        "EntireSentence": "but in some ways i think we are expected  to do it all.",
+        "ButNotAllSentence": "but in <strong>some, but not all</strong> ways i think we are expected  to do it all."
+      }    
+    // The 7 lines above from "start:..." to the end of var stim = {...}" define a placeholder stimulus that you will have to delete when
+    // loading in the individual stimulus data. 
 
-      // This is a placeholder stimulus that you will have to delete when
-      // loading in the individual stimulus data.
-      var stim = all_stims[0];
+    // To rotate through stimulus list, comment out the above 7 lines and  uncomment the following 2:
+    // present: exp.stimuli,
+    // present_handle : function(stim) {
 
       // unselect all radio buttons at the beginning of each trial
       // (by default, the selection of the radio persists across trials)
@@ -113,11 +121,18 @@ function make_slides(f) {
       var original_sentence = stim.EntireSentence;
       var target_sentence = stim.ButNotAllSentence;
 
-      // extract context data
-      var contexthtml = stim.Context
-      // reformat the speaker information for context
-      contexthtml = contexthtml.replace(/Speaker A:/g, "<b>Speaker #1:</b>");
-      contexthtml = contexthtml.replace(/Speaker B:/g, "<b>Speaker #2:</b>");
+      //handle display of context 
+      // if (exp.condition == "context") {
+      //   // extract context data
+      //   var contexthtml = stim.Context;
+      //   // reformat the speaker information for context
+      //   contexthtml = contexthtml.replace(/Speaker A:/g, "<b>Speaker #1:</b>");
+      //   contexthtml = contexthtml.replace(/Speaker B:/g, "<b>Speaker #2:</b>");
+      //   $(".case").html(contexthtml);
+      // } else {
+      //   var contexthtml = "";
+      //   $(".case").html(contexthtml);
+      // }
 
       // replace the placeholder in the HTML document with the relevant sentences for this trial
       $("#trial-originalSen").html(original_sentence);
@@ -126,38 +141,14 @@ function make_slides(f) {
 
     },
 
-    // format_context : function(context) {
-    //   contexthtml = context.replace(/###SpeakerA(\d+).(\d+)?t(\d+)(.\d+)?/g, "<br><b>Speaker #1:</b>");
-    // 	contexthtml = contexthtml.replace(/E_S/g, "");
-    // 	contexthtml = contexthtml.replace(/(\\\[| \\\+|\\\])/g, "");
-    //   contexthtml = contexthtml.replace(/###SpeakerB(\d+).t(\d+)/g, "<br><b>Speaker #2:</b>");
-    // 	contexthtml = contexthtml.replace(/-N((\d+)|[A-Z]+)+/g, "");
-    //   contexthtml = contexthtml.replace(/###/g, " ");
-    //     if (!contexthtml.startsWith("<br><b>Speaker #")) {
-    //         var ssi = contexthtml.indexOf("Speaker #");
-    //         switch(contexthtml[ssi+"Speaker #".length]) {
-    //         case "1":
-    //             contexthtml = "<br><b>Speaker #2:</b> " + contexthtml;
-    //             break;
-    //         case "2":
-    //             contexthtml = "<br><b>Speaker #1:</b> " + contexthtml;
-    //             break;
-    //         default:
-    //             break;
-    //         }
-    //     };
-    //     return contexthtml;
-    // },
-
-
-
     // handle click on "Continue" button
     button: function() {
       this.radio = $("input[name='number']:checked").val();
       this.strange = $("#check-strange:checked").val() === undefined ? 0 : 1;
       if (this.radio) {
         this.log_responses();
-        exp.go(); //use exp.go() if and only if there is no "present" data.
+        exp.go(); //use exp.go() if and only if there is no "present"ed data, ie no list of stimuli.
+        // _stream.apply(this); //use _stream.apply(this) if there is a list of "present" stimuli to rotate through
       } else {
         $('.err').show();
       }
@@ -166,11 +157,11 @@ function make_slides(f) {
     // save response
     log_responses: function() {
       exp.data_trials.push({
-        "slide_number_in_experiment": exp.phase,
         "id": this.stim.TGrep,
+        // "sentence": this.stim.ButNotAllSentence,
+        // "slide_number_in_experiment": exp.phase, //exp.phase is a built-in trial number tracker
         "response": this.radio,
-        "strangeSentence": this.strange,
-        "sentence": this.stim.ButNotAllSentence
+        "strangeSentence": this.strange
       });
     },
   });
@@ -186,7 +177,6 @@ function make_slides(f) {
         age: $("#age").val(),
         gender: $("#gender").val(),
         education: $("#education").val(),
-        problems: $("#problems").val(),
         fairprice: $("#fairprice").val(),
         comments: $("#comments").val()
       };
@@ -213,7 +203,7 @@ function make_slides(f) {
   return slides;
 }
 
-/// init
+/// initialize experiment
 function init() {
 
   exp.trials = [];
@@ -223,7 +213,8 @@ function init() {
   exp.stimuli = stimuli; //call _.shuffle(stimuli) to randomize the order;
   exp.n_trials = exp.stimuli.length;
 
-  // exp.condition = _.sample(["CONDITION 1", "condition 2"]); //can randomize between subject conditions here
+  // exp.condition = _.sample(["context", "no-context"]); //can randomize between subjects conditions here
+  
   exp.system = {
     Browser: BrowserDetect.browser,
     OS: BrowserDetect.OS,

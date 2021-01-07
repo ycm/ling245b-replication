@@ -5,41 +5,41 @@
       Language Experiment
     </title><!--JS-->
     <!-- external general utilities -->
-
     <script src="shared/js/jquery-1.11.1.min.js"></script>
     <script src="shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
-    <script src="shared/js/underscore-min.js"></script><!-- if you want to draw stuff: -->
-    <!-- <script src="_shared/js/raphael-min.js"></script> -->
+    <script src="shared/js/underscore-min.js"></script>
+    
     <!-- experiment logic -->
-
     <script src="shared/js/exp-V2.js"></script>
-    <script src="shared/js/stream-V2.js"></script><!-- utilities to submit data to proliferate -->
+    <script src="shared/js/stream-V2.js"></script>
 
-    <script src="https://proliferate.alps.science/static/js/proliferate.js"></script><!-- general utilities -->
+    <!-- utilities to submit data to proliferate -->
+    <script src="https://proliferate.alps.science/static/js/proliferate.js"></script>
 
+    <!-- general utilities -->
     <script src="shared/js/browserCheck.js"></script>
-    <script src="shared/js/utils.js"></script><!-- if you want to draw cute creatures (depends on raphael): -->
-    <!-- <script src="_shared/js/ecosystem.js"></script> -->
-    <!-- experiment specific helper functions -->
-    <!-- <script src="js/local-utils.js"></script> -->
-    <!--CSS-->
+    <script src="shared/js/utils.js"></script>
     <link href="shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
     <link href="shared/css/cocolab-style.css" rel="stylesheet" type="text/css">
-    <link href="css/local-style.css" rel="stylesheet" type="text/css"><!-- experiment file -->
+    <link href="css/local-style.css" rel="stylesheet" type="text/css">
 
-    <script src="js/experiment.js"></script><!-- stimulus file -->
+    <!-- experiment file -->
+    <script src="js/experiment.js"></script>
 
+    <!-- stimulus file -->
     <script src="js/stimuli.js"></script>
   </head>
+
   <body onload="init()">
     <noscript>This task requires JavaScript.</noscript>
+    
     <!-- initial slide -->
     <div class="slide" id="i0">
       <p class="left">
-        You will read some sentences. These are sentences from transcriptions of real conversations real people had over the phone. <strong>Your task is to answer a question about the red sentence to the best of your ability.</strong><br>
+        You will read some sentences. These are sentneces from transcriptions of real conversations real poeple had over the phone. <strong>Your task is to answer a question about the red sentence to the best of your ability.</strong><br>
         <br>
         The experiment will take approximately 10 minutes. Let's start with two examples!
-      </p><button id="start_button" type="button">Start Experiment</button>
+      </p><button id="start_button" type="button">Start experiment</button>
       <p class="left legal">
         <strong><br>
         <br>
@@ -227,6 +227,10 @@
 
     <!-- trial slide -->
     <div class="slide" id="trial">
+
+      <!-- placeholders for contexts -->
+      <!-- <p class="case" style="text-align: left;"></p> -->
+      
       <!-- placeholders for stimuli -->
       <p class="originalSen" id="trial-originalSen">
         {{original sentence}}
@@ -324,13 +328,13 @@
             <option value="">
             </option>
             <option value="Male">
-              Male
+              male
             </option>
             <option value="Female">
-              Female
+              female
             </option>
             <option value="Other">
-              Other
+              other
             </option>
           </select>
         </p>
@@ -338,20 +342,20 @@
           Age: <input type="text" id="age">
         </p>
         <p>
-          Level Of Education: <select id="education">
+          Level of education: <select id="education">
             <option value="-1">
             </option>
             <option value="0">
-              Some High School
+              Some high school
             </option>
             <option value="1">
-              Graduated High School
+              Graduated high school
             </option>
             <option value="2">
-              Some College
+              Some college
             </option>
             <option value="3">
-              Graduated College
+              Graduated college
             </option>
             <option value="4">
               Hold a higher degree
@@ -359,7 +363,7 @@
           </select>
         </p>
         <p>
-          Native Language: <input type="text" id="language">
+          Native language: <input type="text" id="language">
         </p><label>(the language(s) spoken at home when you were a child)</label>
         <p>
           Do you think the payment was fair?
@@ -367,7 +371,7 @@
           <option value="-1">
           </option>
           <option value="0">
-            The payment was too little
+            The payment was too low
           </option>
           <option value="1">
             The payment was fair
@@ -379,10 +383,10 @@
           <option value="-1">
           </option>
           <option value="0">
-            Worse than the Average experiment
+            Worse than the average experiment
           </option>
           <option value="1">
-            An Average experiment
+            An average experiment
           </option>
           <option value="2">
             Better than average experiment
@@ -399,7 +403,7 @@
     <!-- final slide -->
     <div id="thanks" class="slide js">
       <p class="big">
-        Thanks for your Time!
+        Thanks for your time!
       </p>
     </div>
 
