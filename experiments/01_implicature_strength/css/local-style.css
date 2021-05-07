@@ -30,7 +30,7 @@
 
 .instruction{
     color:#424242;
-    text-align: justify;
+    text-align: center;
     font-size: 17px;
     padding-top: 0.5cm;
     padding-bottom: 0.5cm;
@@ -38,6 +38,15 @@
 }
 .targetSen{
     color:#2E9AFE;
+}
+
+.ex2-question{
+    color:#498356;
+}
+
+
+.question{
+    color:#498356;
 }
 
 .notBoth{
@@ -103,7 +112,7 @@ table.likertscale  {
   /*border: 1px solid black;*/
   text-align: center;
   width: 90%;
-  align-self: left;
+  align-self: center;
   margin-left:auto;
   margin-right:auto;
 }

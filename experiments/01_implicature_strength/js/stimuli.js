@@ -1,6 +1,20 @@
 // data for all stimuli in the form of a list of JavaScript objects
 
 var all_stims =
+[{
+  "TGrep": "150826:22",
+  "Context": "Speaker A: oh, didn't really even count.<p>Speaker B: so.<p>Speaker A: yeah.  i'm, i'm a college student so i haven't been, you know, a jury eligible age for very long<p>Speaker B: yeah.<p>Speaker A: um, and, uh, i did get one summons actually at one point, but i declined it which i'm able  to do  because i'm a student, because it was, uh, a very bad time.<p>Speaker B: yeah. well, you learn a lot  going to the juries like that though.<p>Speaker A: yeah, i mean, i, i really, i would like  to, uh, to do at some point, um, but, i, i haven't. uh, one, one thing that i, i think  is, um, you know, maybe is a problem is, uh, i, i think that the criminal jury system works pretty well now,",
+  "EntireSentence": "but i wonder if maybe in some civil cases it doesn't work as well.",
+  "ButNotAllSentence": "but i wonder if maybe in <strong>some, but not all</strong> civil cases it doesn't work as well."
+},  {
+  "TGrep": "37224:9",
+  "Context": "Speaker A:  and, and i, you know, i still provide most of the things that  go on around the house.<p>Speaker B: right.<p>Speaker A: so, uh, yeah and for a while i was going to school too, and tha-, it was tough.<p>Speaker B: yeah,  i uh, i think that while it 's a good change for i think women to be able  to fulfill their potential in whatever they feel, you know, their expertise may be .<p>Speaker A: uh-huh.<p>Speaker B: uh-huh.<p>Speaker A: uh, i think sometimes other things suffer and tha-, i think it 's hard to find a balance there.<p>Speaker B: ",
+  "EntireSentence": "but in some ways i think we are expected  to do it all.",
+  "ButNotAllSentence": "but in <strong>some, but not all</strong> ways i think we are expected  to do it all."
+}];
+
+/*
+var all_stims =
   [{
     "TGrep": "150826:22",
     "Context": "Speaker A: oh, didn't really even count.<p>Speaker B: so.<p>Speaker A: yeah.  i'm, i'm a college student so i haven't been, you know, a jury eligible age for very long<p>Speaker B: yeah.<p>Speaker A: um, and, uh, i did get one summons actually at one point, but i declined it which i'm able  to do  because i'm a student, because it was, uh, a very bad time.<p>Speaker B: yeah. well, you learn a lot  going to the juries like that though.<p>Speaker A: yeah, i mean, i, i really, i would like  to, uh, to do at some point, um, but, i, i haven't. uh, one, one thing that i, i think  is, um, you know, maybe is a problem is, uh, i, i think that the criminal jury system works pretty well now,",
@@ -103,3 +117,4 @@ var all_stims =
     "EntireSentence": "i sold some of them,",
     "ButNotAllSentence": "i sold <strong>some, but not all</strong> of them,"
   }]
+*/
