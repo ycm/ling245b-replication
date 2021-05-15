@@ -164,7 +164,7 @@ function make_slides(f) {
 
     start: function() {
       // hide error message
-      this.audioPath = "https://github.com/ycm/ling245b-replication/raw/3ee98f0d2366bb42010921bf9360c113c8cc9db    c/experiments/01_implicature_strength/" + "data/Idan_11_filler_eng.wav";
+      this.audioPath = "https://github.com/ycm/ling245b-replication/raw/3ee98f0d2366bb42010921bf9360c113c8cc9dbc/experiments/01_implicature_strength/" + "data/Idan_11_filler_eng.wav";
       this.question = "Did the queen knight someone/something?";
       $("#ex2-question").html(this.question);
       $(".err").hide();
