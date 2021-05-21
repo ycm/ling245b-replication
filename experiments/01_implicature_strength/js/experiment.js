@@ -425,6 +425,7 @@ function init() {
   console.log(exp.stimuli)
   exp.n_trials = exp.stimuli.length;
 
+  console.log('num to test: ' + exp.numTotalSentencesToTest.toString());
 
   exp.system = {
     Browser: BrowserDetect.browser,
