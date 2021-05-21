@@ -393,7 +393,7 @@ function init() {
   exp.catch_trials = [];
 
   var NUM_FILLERS = 40;
-  var NUM_TOTAL_SENTENCES_TO_TEST = 3;
+  var NUM_TOTAL_SENTENCES_TO_TEST = 60;
   
   var fillers = rawFillers;
   fillers.splice(38, 1);
