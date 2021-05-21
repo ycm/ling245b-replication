@@ -38,15 +38,17 @@
     <script type="text/JavaScript">
           $(document).ready(function(){
           var ut_id = "1e9291eb994067cd0fcfebafdae76c6d";
+          var ut_response = UTWorkerLimitReached(ut_id);
+	        console.log("Unique turker response" +  ut_response);
           if (UTWorkerLimitReached(ut_id)) {
             $(".slide").hide();
             $("body").html("You have already completed the maximum number of HITs allowed by this requester. Please click ‘Return HIT’ to avoid any impact on your approval rating.");
         }});
-        </script>
+    </script>
 
     <STYLE TYPE="text/css">
       TD{font-family: Helvetica; font-size: 10pt;}
-      </STYLE>
+    </STYLE>
   </head>
 
   <body onload="init()">
