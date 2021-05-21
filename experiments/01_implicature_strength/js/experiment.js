@@ -18,9 +18,9 @@ function make_slides(f) {
     start: function() {
       exp.startT = Date.now();
 
-      let randomExperimentType = _.sample([0, 1, 2, 3, 4, 5, 6, 7]);
+      let randomExperimentType = _.sample([3, 4]);
       for (i = 0; i < 40; i++) {
-        console.log(_.sample([6, 7]));
+        console.log(_.sample([3, 4]));
       }
       experimentParams = experimentSettingToParams[randomExperimentType];
 
