@@ -18,8 +18,8 @@ function make_slides(f) {
     start: function() {
       exp.startT = Date.now();
 
-      // let randomExperimentType = _.sample([0, 1, 4]);
-      let randomExperimentType = 4;
+      let randomExperimentType = _.sample([0, 3, 5]);
+      // let randomExperimentType = 4;
       console.log('experimentType: ' + randomExperimentType.toString());
 
       experimentParams = experimentSettingToParams[randomExperimentType];
